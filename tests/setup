@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# progressbar - A pacman like progress bar in bash
+# Copyright (C) 1016 - 2017 Alexandre PUJOL <alexandre@pujol.io>.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# This file should be sourced by all test-scripts
+#
+
+# shellcheck disable=SC1091
+
+# Project directories
+TEST_HOME="$(pwd)"
+EXT_HOME="$(dirname "$TEST_HOME")"
+
+
+# sharness config
+source ./sharness
+source "${EXT_HOME}/progressbar.sh"
+
+# Test helpers
+
+test_cleantheme() {
+	unset Braket_in Braket_out
+	unset Cursor_done Cursor_not_done
+	unset Cursor Cursor_small
+}
+
+test_progressbar() {
+	local _ii _start=0 _end=25
+	for _ii in $(seq ${_start} ${_end}); do
+		sleep 0.1
+		progressbar "$1" ${_ii} ${_end} "$2" "$3" "$4"
+	done
+	echo
+}
