@@ -1,4 +1,4 @@
-# progressbar [![build][build-img]][build-url]
+# progressbar [![build][build-img]][build-url] [![climate][clima-img]][clima-url]
 
 A pacman like progress bar in bash, it  aims to provide an quick and easy to use
 progress bar to put in your shell code.
@@ -98,3 +98,5 @@ Feedback, contributors, pull requests are all very welcome.
 
 [build-img]: https://travis-ci.org/roddhjav/progressbar.svg?branch=master
 [build-url]: https://travis-ci.org/roddhjav/progressbar
+[clima-img]: https://codeclimate.com/github/roddhjav/progressbar/badges/gpa.svg
+[clima-url]: https://codeclimate.com/github/roddhjav/progressbar
