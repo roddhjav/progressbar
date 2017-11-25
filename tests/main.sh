@@ -13,7 +13,7 @@ test_expect_success 'Testing Default Theme' '
     '
 
 test_cleantheme
-ILoveCandy=true
+export ILoveCandy=true
 test_expect_success 'Testing ILoveCandy Theme' '
 	test_progressbar "ILoveCandy" "1" &&
 	test_progressbar "ILoveCandy" "2"
