@@ -43,14 +43,18 @@ To use the progressbar, you just need to source it in your bash script. `progres
 #!/bin/bash
 
 # Loading progressbar
-source progressbar.sh || exit 1
+source ./progressbar.sh || exit 1
 
-local _ii _start=0 _end=25
-for _ii in $(seq ${_start} ${_end}); do
-    sleep 0.1
-    progressbar "My progress bar" ${_ii} ${_end}
-done
-echo
+main () {
+  local _ii _start=0 _end=25
+  for _ii in $(seq ${_start} ${_end}); do
+      sleep 0.1
+      progressbar "My progress bar" ${_ii} ${_end}
+  done
+  echo
+}
+
+main
 ```
 ```
  My progress bar                   [###############################] 100%
