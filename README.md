@@ -1,16 +1,19 @@
-# progressbar [![build][build-img]][build-url] [![codacy][codac-img]][codac-url]
+<h1 align="center">progressbar</h1>
 
-A pacman like progress bar in bash, it  aims to provide an quick and easy to use
+<p align="center">
+<a href="https://travis-ci.org/roddhjav/progressbar"><img src="https://img.shields.io/travis/roddhjav/progressbar/master.svg" alt="Build Status" /></a>
+<a href="https://www.codacy.com/app/roddhjav/progressbar"><img src="https://img.shields.io/codacy/grade/180ac4623768488d9763211c2bc6128f/master.svg" alt="Code Quality" /></a>
+<a href="https://github.com/roddhjav/progressbar/releases/latest"><img src="https://img.shields.io/github/release/roddhjav/progressbar.svg?maxAge=600" alt="Last Release" /></a>
+</p>
+
+<p align="center">
+A pacman like progress bar in bash.
+</p>
+
+A pacman like progress bar in bash that aims to provide an quick and easy to use
 progress bar to put in your shell code.
 
-<!-- TODO:
- - Complete examples script: from the simpliest to the more complex using external  bash enviterator as increment. Also do an example script that look like pacman
- - Create a small static website (with hugo) in https://pujol.gitlab.io/progressbar -->
-
-
 **Features**
-
-This progressbar supports the following features:
 * `ILoveCandy` option to have progress bar like pacman does.
 * Personalize and create your own progress bar theme.
 
@@ -31,7 +34,7 @@ make test
 ```
 
 ## Usage
-To use the progressbar, you just need to source it in your bash script. `progressbar` is a bash function that tajes up to 6 arguments:
+To use the progressbar, you just need to source it in your bash script. `progressbar` is a bash function that takes up to 6 arguments:
 
 1. `title` Bar title *(mandatory)*
 2. `current` Current progress of the bar *(mandatory)*
@@ -95,8 +98,3 @@ Feedback, contributors, pull requests are all very welcome.
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-[build-img]: https://travis-ci.org/roddhjav/progressbar.svg?branch=master
-[build-url]: https://travis-ci.org/roddhjav/progressbar
-[codac-img]: https://api.codacy.com/project/badge/Grade/180ac4623768488d9763211c2bc6128f
-[codac-url]: https://www.codacy.com/app/roddhjav/progressbar
