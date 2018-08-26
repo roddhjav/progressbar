@@ -31,7 +31,7 @@ test_expect_success 'Testing special theme' '
 	ILoveCandy=false test_progressbar "Special theme 2" "Default"
     '
 
-test_cleanconfig
+test_cleantheme
 test_expect_success 'Testing special theme' '
 	Braket_in="(" Braket_out=")" Cursor="x" Cursor_small=" " Cursor_done="-" Cursor_not_done="---" &&
 	ILoveCandy=true test_progressbar "Special theme 3" "ILoveCandy"
