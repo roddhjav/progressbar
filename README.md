@@ -43,7 +43,7 @@ To use the progressbar, you just need to source it in your bash script. `progres
 
 1. `title` Bar title *(mandatory)*
 2. `current` Current progress of the bar *(mandatory)*
-3. `total` Total bar progress *(mandatory)*
+3. `total` Total bar progress *(optional)*
 4. `msg1`, `msg2`, `msg3` *(optional)*
 
 **Example:**

@@ -53,8 +53,7 @@ __progressbar_theme() {
 progressbar() {
 	[[ -z "${1}" ]] && __die "$(__progressbar_error bar title)"
 	[[ -z "${2}" ]] && __die "$(__progressbar_error curent position)"
-	[[ -z "${3}" ]] && __die "$(__progressbar_error total)"
-	local title="${1}" current="${2}" total="${3}"
+	local title="${1}" current="${2}" total="${3:-100}"
 	local msg1="${4}" msg2="${5}" msg3="${6}"
 	__progressbar_theme
 
