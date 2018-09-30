@@ -53,10 +53,11 @@ To use the progressbar, you just need to source it in your bash script. `progres
 # Loading progressbar
 source progressbar.sh || exit 1
 
-local _ii _start=0 _end=25
-for _ii in $(seq ${_start} ${_end}); do
+start=0
+end=25
+for ii in $(seq $start $end); do
     sleep 0.1
-    progressbar "My progress bar" ${_ii} ${_end}
+    progressbar "My progress bar" $ii $end
 done
 echo
 ```
@@ -80,7 +81,7 @@ Moreover, you can change the following variables to set your own themes. The fol
 | Cursor_done     |   `#`   |     `-`    |
 | Cursor_not_done |   `-`   |    `o  `   |
 | Cursor          |         |     `C`    |
-| Cursor_small    |         |     `C`    |
+| Cursor_small    |         |     `c`    |
 
 
 ## Contribution
