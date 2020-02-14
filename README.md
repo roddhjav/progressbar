@@ -17,7 +17,7 @@ progress bar to put in your shell code.
 No installation is needed, just place the `progressbar.sh` file in your working
 directory and enjoy!
 ```sh
-curl https://raw.githubusercontent.com/roddhjav/progressbar/v1.0/progressbar.sh > progressbar.sh
+curl https://raw.githubusercontent.com/roddhjav/progressbar/v1.1/progressbar.sh > progressbar.sh
 ```
 
 However if you want to run the test, you need to clone this repository:
