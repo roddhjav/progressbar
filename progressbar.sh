@@ -16,15 +16,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-readonly green='\e[0;32m'
-readonly yellow='\e[0;33m'
-readonly magenta='\e[0;35m'
+# shellcheck disable=SC2059
+
 readonly Bold='\e[1m'
 readonly Bred='\e[1;31m'
-readonly Bgreen='\e[1;32m'
 readonly Byellow='\e[1;33m'
-readonly Bblue='\e[1;34m'
-readonly Bmagenta='\e[1;35m'
 readonly reset='\e[0m'
 
 __die() { echo -e " ${Bred}[x]${reset} ${Bold}Error :${reset} ${*}" >&2 && exit 1; }
@@ -58,37 +54,37 @@ progressbar() {
 	__progressbar_theme
 
 	cols=$(tput cols)
-	let block=${cols}/3-${cols}/20
-	let _title=${block}-${#title}-1
-	let _msg=${block}-${#msg1}-${#msg2}-${#msg3}-3
+	(( block=cols/3-cols/20 ))
+	(( _title=block-${#title}-1 ))
+	(( _msg=block-${#msg1}-${#msg2}-${#msg3}-3 ))
 
 	_title=$(printf "%${_title}s")
 	_msg=$(printf "%${_msg}s")
 
-	let _pbar_size=${cols}-2*${block}-8
-	let _progress=${current}*100/${total}
-	let _current=${current}*${_pbar_size}
-	let _current=${_current}/${total}
-	let _total=${_pbar_size}-${_current}
+	(( _pbar_size=cols-2*block-8 ))
+	(( _progress=current*100/total ))
+	(( _current=current*_pbar_size ))
+	(( _current=_current/total ))
+	(( _total=_pbar_size-_current ))
 
 	if [[ "${ILoveCandy}" == true ]]; then
 		# First print <_dummy_block> [ o  o  o  o  o ] _progress%
-		let _motif=${_pbar_size}/3
-		let _dummy_block=2*${block}+1
+		(( _motif=_pbar_size/3 ))
+		(( _dummy_block=2*block+1 ))
 		_dummy_block=$(printf "%${_dummy_block}s")
 		_motif=$(printf "%${_motif}s")
 		printf "\r${_dummy_block}${Braket_in} ${_motif// /${Cursor_not_done}}${Braket_out} ${_progress}%%"
 
 		# Second print <title> <msg> [-----C
 		_current_pair=${_current}
-		let _current=${_current}-1
-		let _total=${_total}
+		(( _current=_current-1 ))
+		(( _total=_total ))
 		_current=$(printf "%${_current}s")
 		_total=$(printf "%${_total}s")
 
 		printf "\r ${title}${_title} ${_msg}${msg1} ${msg2} ${msg3} "
 		printf "${Braket_in}${_current// /${Cursor_done}}"
-		if [[ "$(expr ${_current_pair} % 2)" -eq 0 ]]; then
+		if [[ $(( _current_pair % 2)) -eq 0 ]]; then
 			printf "${Cursor}"
 		else
 			printf "${Cursor_small}"
