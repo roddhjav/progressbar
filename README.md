@@ -1,19 +1,8 @@
-<h1 align="center">progressbar</h1>
-<p align="center">
-    <a href="https://travis-ci.org/roddhjav/progressbar">
-        <img src="https://img.shields.io/travis/roddhjav/progressbar/master.svg?style=flat-square"
-             alt="Build Status" /></a>
-    <a href="https://www.codacy.com/app/roddhjav/progressbar">
-        <img src="https://img.shields.io/codacy/grade/180ac4623768488d9763211c2bc6128f/master.svg?style=flat-square"
-             alt="Code Quality" /></a>
-    <a href="https://github.com/roddhjav/progressbar/releases/latest">
-        <img src="https://img.shields.io/github/release/roddhjav/progressbar.svg?maxAge=600&style=flat-square"
-             alt="Last Release" /></a>
-</p>
+# progressbar
 
-<p align="center">
-    A pacman like progress bar in bash.
-</p>
+[![][travis]][travis-link] [![][quality]][quality-link] [![][release]][release-link]
+
+**A pacman like progress bar in bash.**
 
 A pacman like progress bar in bash that aims to provide an quick and easy to use
 progress bar to put in your shell code.
@@ -90,7 +79,7 @@ Feedback, contributors, pull requests are all very welcome.
 
 ## License
 
-    Copyright (C) 2016 - 2018 Alexandre PUJOL
+    Copyright (C) 2016-2020 Alexandre PUJOL
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -104,3 +93,11 @@ Feedback, contributors, pull requests are all very welcome.
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+[travis]: https://img.shields.io/travis/roddhjav/progressbar/master.svg?style=flat-square
+[travis-link]: https://travis-ci.org/roddhjav/progressbar
+[quality]: https://img.shields.io/codacy/grade/180ac4623768488d9763211c2bc6128f/master.svg?style=flat-square
+[quality-link]: https://www.codacy.com/app/roddhjav/progressbar
+[release]: https://img.shields.io/github/release/roddhjav/progressbar.svg?maxAge=600&style=flat-square
+[release-link]: https://github.com/roddhjav/progressbar/releases/latest

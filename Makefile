@@ -4,11 +4,11 @@ all:
 install:
 	@echo "'progressbar' is a simple shell script, so there is nothing to do. Try \"make test\" instead."
 
-test:
+tests:
 	make -C tests
 
 lint:
 	shellcheck -s bash progressbar.sh
 
 
-.PHONY: all install test lint
+.PHONY: all install tests lint

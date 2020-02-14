@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # progressbar - A pacman like progress bar in bash
-# Copyright (C) 2016 - 2018 Alexandre PUJOL <alexandre@pujol.io>.
+# Copyright (C) 2016-2020 Alexandre PUJOL <alexandre@pujol.io>.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
