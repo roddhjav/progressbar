@@ -1,6 +1,6 @@
 # progressbar
 
-[![][travis]][travis-link] [![][quality]][quality-link] [![][release]][release-link]
+[![][workflow]][action] [![][quality]][quality-link] [![][release]][release-link]
 
 **A pacman like progress bar in bash.**
 
@@ -94,9 +94,8 @@ Feedback, contributors, pull requests are all very welcome.
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
-[travis]: https://img.shields.io/travis/roddhjav/progressbar/master.svg?style=flat-square
-[travis-link]: https://travis-ci.org/roddhjav/progressbar
+[workflow]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Froddhjav%2Fprogressbar%2Fbadge&style=flat-square
+[action]: https://actions-badge.atrox.dev/roddhjav/progressbar/goto
 [quality]: https://img.shields.io/codacy/grade/180ac4623768488d9763211c2bc6128f/master.svg?style=flat-square
 [quality-link]: https://www.codacy.com/app/roddhjav/progressbar
 [release]: https://img.shields.io/github/release/roddhjav/progressbar.svg?maxAge=600&style=flat-square
