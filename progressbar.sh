@@ -18,11 +18,7 @@
 
 # shellcheck disable=SC2059
 
-readonly Bold='\e[1m'
-readonly Bred='\e[1;31m'
-readonly Byellow='\e[1;33m'
-readonly reset='\e[0m'
-
+readonly Bold='\e[1m' Bred='\e[1;31m' Byellow='\e[1;33m' reset='\e[0m'
 __die() { echo -e " ${Bred}[x]${reset} ${Bold}Error :${reset} ${*}" >&2 && exit 1; }
 
 __progressbar_error() {
@@ -31,18 +27,18 @@ __progressbar_error() {
 
 __progressbar_theme() {
 	[[ -z "${ILoveCandy}" ]] && ILoveCandy=false
-	[[ -z "${Braket_in}" ]]  && Braket_in="["
-	[[ -z "${Braket_out}" ]] && Braket_out="]"
+	[[ -z "${BraketIn}" ]]   && BraketIn="["
+	[[ -z "${BraketOut}" ]]  && BraketOut="]"
 
 	# Definition of the diferent cursors
 	if [[ "${ILoveCandy}" == true ]]; then
-		[[ -z "${Cursor_done}" ]]     && Cursor_done="-"
-		[[ -z "${Cursor_not_done}" ]] && Cursor_not_done="o  "
-		[[ -z "${Cursor}" ]]          && Cursor="${Byellow}C${reset}"
-		[[ -z "${Cursor_small}" ]]    && Cursor_small="${Byellow}c${reset}"
+		[[ -z "${CursorDone}" ]]     && CursorDone="-"
+		[[ -z "${CursorNotDone}" ]]  && CursorNotDone="o  "
+		[[ -z "${Cursor}" ]]         && Cursor="${Byellow}C${reset}"
+		[[ -z "${CursorSmall}" ]]    && CursorSmall="${Byellow}c${reset}"
 	else
-		[[ -z "${Cursor_done}" ]]     && Cursor_done="#"
-		[[ -z "${Cursor_not_done}" ]] && Cursor_not_done="-"
+		[[ -z "${CursorDone}" ]]     && CursorDone="#"
+		[[ -z "${CursorNotDone}" ]]  && CursorNotDone="-"
 	fi
 }
 
@@ -73,7 +69,7 @@ progressbar() {
 		(( _dummy_block=2*block+1 ))
 		_dummy_block=$(printf "%${_dummy_block}s")
 		_motif=$(printf "%${_motif}s")
-		printf "\r${_dummy_block}${Braket_in} ${_motif// /${Cursor_not_done}}${Braket_out} ${_progress}%%"
+		printf "\r${_dummy_block}${BraketIn} ${_motif// /${CursorNotDone}}${BraketOut} ${_progress}%%"
 
 		# Second print <title> <msg> [-----C
 		_current_pair=${_current}
@@ -83,21 +79,21 @@ progressbar() {
 		_total=$(printf "%${_total}s")
 
 		printf "\r ${title}${_title} ${_msg}${msg1} ${msg2} ${msg3} "
-		printf "${Braket_in}${_current// /${Cursor_done}}"
+		printf "${BraketIn}${_current// /${CursorDone}}"
 		if [[ $(( _current_pair % 2)) -eq 0 ]]; then
 			printf "${Cursor}"
 		else
-			printf "${Cursor_small}"
+			printf "${CursorSmall}"
 		fi
 
 		# Transform the last "C" in "-"
 		if [[ "${_progress}" -eq 100 ]]; then
-			printf "\r ${title}${_title} ${_msg}${msg1} ${msg2} ${msg3} ${Braket_in}${_current// /${Cursor_done}}${Cursor_done}${Braket_out}\n"
+			printf "\r ${title}${_title} ${_msg}${msg1} ${msg2} ${msg3} ${BraketIn}${_current// /${CursorDone}}${CursorDone}${BraketOut}\n"
 		fi
 	else
 		_current=$(printf "%${_current}s")
 		_total=$(printf "%${_total}s")
 		printf "\r ${title}${_title} ${_msg}${msg1} ${msg2} ${msg3} "
-		printf "${Braket_in}${_current// /${Cursor_done}}${_total// /${Cursor_not_done}}${Braket_out} ${_progress}%%"
+		printf "${BraketIn}${_current// /${CursorDone}}${_total// /${CursorNotDone}}${BraketOut} ${_progress}%%"
 	fi
 }

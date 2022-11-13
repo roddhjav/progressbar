@@ -63,14 +63,14 @@ There are two themes provided:
 
 Moreover, you can change the following variables to set your own themes. The following table sum up the values used.
 
-|                 | Default | ILoveCandy |
-|-----------------|:-------:|:----------:|
-| Braket_in       |   `[`   |     `[`    |
-| Braket_out      |   `]`   |     `]`    |
-| Cursor_done     |   `#`   |     `-`    |
-| Cursor_not_done |   `-`   |    `o  `   |
-| Cursor          |         |     `C`    |
-| Cursor_small    |         |     `c`    |
+|               | Default | ILoveCandy |
+|---------------|:-------:|:----------:|
+| BraketIn      |   `[`   |     `[`    |
+| BraketOut     |   `]`   |     `]`    |
+| CursorDone    |   `#`   |     `-`    |
+| CursorNotDone |   `-`   |    `o  `   |
+| Cursor        |         |     `C`    |
+| CursorSmall   |         |     `c`    |
 
 
 ## Contribution
